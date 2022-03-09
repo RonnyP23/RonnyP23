@@ -1,0 +1,15 @@
+{
+"products":[
+    {
+        "id":1,
+        "name":"cert A1",
+        "price":149
+    },
+    {
+        "id":2,
+        "name":"token",
+        "price":149
+    }
+]
+
+}
