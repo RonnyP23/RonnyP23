@@ -11,7 +11,7 @@
         <form >
             <p>
                 <mat-form-field >
-                    <input type="text" matInput placeholder="usuario" value="usuario" >
+                    <input type="text" matInput placeholder="usuario">
                 </mat-form-field>
             </p>
 
@@ -21,10 +21,15 @@
                     formControlName="password">
                 </mat-form-field>
             </p>
-            
-            <div class="button">
-                <button type="submit" mat-button>Login</button>
+            <div style="display: flex;">
+                <div class="button">
+                    <button type="submit" mat-button>Login</button>
+                </div>
+                <div class="button">
+                    <button type="submit" mat-button>Cadastrar-se</button>
+                </div>
             </div>
+            
         </form>
     </mat-card-content>
 

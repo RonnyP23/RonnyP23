@@ -14,6 +14,9 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { LoginComponent } from './components/template/login/login.component';
 import { MatInputModule} from '@angular/material/input';
 import { MatCardModule} from '@angular/material/card';
+import { HomeComponent } from './layout/home/home.component';
+import { ProductCreateComponent } from './layout/product-create/product-create.component';
+import { AuthenticationComponent } from './layout/authentication/authentication.component';
 
 
 
@@ -24,7 +27,10 @@ import { MatCardModule} from '@angular/material/card';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    ProductCreateComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
