@@ -17,6 +17,7 @@ import { MatCardModule} from '@angular/material/card';
 import { HomeComponent } from './layout/home/home.component';
 import { ProductCreateComponent } from './layout/product-create/product-create.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
+import { HttpClientModule} from '@angular/common/http'
 
 
 
@@ -42,7 +43,9 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
     MatSelectModule,
     MatMenuModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
+
     
   ],
   providers: [],
