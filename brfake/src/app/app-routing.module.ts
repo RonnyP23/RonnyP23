@@ -5,6 +5,7 @@ import { HomeComponent } from './layout/home/home.component';
 import { ProductCreateComponent } from './layout/product-create/product-create.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
 import { AuthGuard } from './account/shared/auth.guard';
+import { CreateAccountComponent } from './layout/create-account/create-account.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,9 @@ const routes: Routes = [
     {path: '', redirectTo: 'Login', pathMatch: 'full'},
     {path: 'Login', component: LoginComponent}
   ]
-  }
+  },
+
+  {path: 'createAccount', component: CreateAccountComponent}
     
   
 ];
