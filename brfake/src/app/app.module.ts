@@ -17,13 +17,10 @@ import { MatCardModule} from '@angular/material/card';
 import { HomeComponent } from './layout/home/home.component';
 import { ProductCreateComponent } from './layout/product-create/product-create.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
-<<<<<<< Updated upstream
 import { HttpClientModule} from '@angular/common/http';
 import { CreateAccountComponent } from './layout/create-account/create-account.component'
-=======
-import { HttpClientModule} from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
->>>>>>> Stashed changes
+
 
 
 
