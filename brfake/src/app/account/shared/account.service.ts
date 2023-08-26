@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -11,13 +11,30 @@ export class AccountService {
   constructor(private http: HttpClient) { }
 
   async login(user: any) {
-    debugger
-    const result = await this.http.post<any> (`${environment.api}/auth/login`, user).toPromise();
 
-    if(result) {
-      window.localStorage.setItem('token', result.access_token);
-      return true
+
+    try {
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json'
+        })
+      };
+      
+      const result = await this.http.post<any>(`${environment.api}/auth/login`, user, httpOptions).toPromise();
+      
+      if (result && result.access_token) {
+        // Armazena o token no localStorage
+        window.localStorage.setItem('token', result.access_token);
+        return true;
+      }
+      
+      return false;
+    } catch (error) {
+      console.error(error);
+      return false;
     }
-    return false;
   }
 }
+
+
+

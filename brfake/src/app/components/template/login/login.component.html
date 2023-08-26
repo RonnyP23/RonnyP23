@@ -8,10 +8,10 @@
 <mat-card >
     
     <mat-card-content class="d-flex justify-content-center">
-        <form >
+        <form [formGroup]="login" (ngSubmit)="onSubmit()">
             <p>
                 <mat-form-field >
-                    <input type="text" matInput placeholder="usuario"
+                    <input  type="text" matInput placeholder="usuario"
                     formControlName="email">
                     
                 </mat-form-field>
@@ -19,16 +19,16 @@
 
             <p>
                 <mat-form-field>
-                    <input type="password" matInput placeholder="Password" 
+                    <input  type="password" matInput placeholder="Password" 
                     formControlName="password">
                 </mat-form-field>
             </p>
             <div style="display: flex;">
                 <div class="button">
-                    <button type="submit" mat-button>Login</button>
+                    <button type="submit" mat-button (click)="onSubmit()">Login</button>
                 </div>
                 <div class="button">
-                    <button type="submit" mat-button>Cadastrar-se</button>
+                    <button type="submit"routerLink="createAccount" mat-button>Cadastrar-se</button>
                 </div>
             </div>
             
