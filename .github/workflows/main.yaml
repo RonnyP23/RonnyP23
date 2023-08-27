@@ -15,7 +15,7 @@ jobs:
           node-vesion: 16.x
 
       - name: Change Working Directory
-        run: cd brfake
+        run: cd ../../brfake
         
       - name: run install
         run: | 
