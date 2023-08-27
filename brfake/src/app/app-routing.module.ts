@@ -17,8 +17,8 @@ const routes: Routes = [
   },
   {path: '', component: LoginComponent,
   children:[
-    {path: '', redirectTo: 'Login', pathMatch: 'full'},
-    {path: 'Login', component: LoginComponent}
+    {path: '', redirectTo: 'login', pathMatch: 'full'},
+    {path: 'login', component: LoginComponent}
   ]
   },
 
