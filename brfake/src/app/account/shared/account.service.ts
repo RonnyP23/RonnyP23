@@ -8,7 +8,9 @@ import { environment } from 'src/environments/environment';
 })
 export class AccountService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    ) { }
 
   async login(user: any) {
 

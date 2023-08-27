@@ -9,16 +9,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   
   login: FormGroup;
-  
 
   constructor( 
     private accountService: AccountService,
     private formBuilder: FormBuilder,
     private router: Router
   ) {
+
     this.login = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -29,7 +28,6 @@ export class LoginComponent implements OnInit {
   }
 
   async onSubmit() {
-    debugger
       const email = this.login.get('email')?.value;
       const password = this.login.get('password')?.value;
 
@@ -38,11 +36,11 @@ export class LoginComponent implements OnInit {
         password: password
       };
     try {
-      
       const result = await this.accountService.login(loginData);
       console.log(`login efetuado ${result}`);
       this.router.navigate(['']);
     } catch (error) {
+      this.router.navigate(['createAccount']);
       console.log(error)
     }
     
