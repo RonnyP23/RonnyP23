@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit {
   
   hide = true;
   login: FormGroup;
-  invalidPassword = false
+  invalidPassword = false;
+ 
 
   constructor( 
     private accountService: AccountService,
@@ -47,10 +48,12 @@ export class LoginComponent implements OnInit {
     try {
       const result = await this.accountService.login(loginData);
       console.log(`login efetuado ${result}`);
-      this.router.navigate(['productCreate']);
+      if(result === false){
+        this.invalidPassword = true;
+      }else{
+        this.router.navigate(['productCreate']);
+      }
     } catch (error) {
-      this.invalidPassword = true
-      //this.router.navigate(['createAccount']);
       console.log(error)
     }
     

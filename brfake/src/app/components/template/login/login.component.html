@@ -1,16 +1,18 @@
 
 
 
-<mat-card-title class="d-flex justify-content-center align-items-center"style="height: 55%;border-radius: 40px;">
+<mat-card-title class="d-flex-center"style="height: 55%;border-radius: 40px;">
     <span><img class="logo mat-elevation-z8" src="../../../../assets/img/pipa.svg"></span>
 
 </mat-card-title>
+<div class="alert-content">
+    <div class="alert alert-danger" role="alert" *ngIf="invalidPassword">
+        Usuario ou senha incorretos
+    </div>
+</div>
 <mat-card >
     
-    <mat-card-content class="d-flex justify-content-center">
-        <div class="alert alert-danger" role="alert" *ngIf="invalidPassword">
-            Usuario ou senha incorretos
-        </div>
+    <mat-card-content class="d-flex-center">
         <form [formGroup]="login" (ngSubmit)="onSubmit()">
             <p>
                 <mat-form-field >
