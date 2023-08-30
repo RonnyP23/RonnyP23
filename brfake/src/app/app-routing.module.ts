@@ -9,7 +9,7 @@ import { CreateAccountComponent } from './layout/create-account/create-account.c
 
 
 const routes: Routes = [
-  {path: '', component:HomeComponent,
+  {path: 'productCreate', component:ProductCreateComponent,
     children:[
       {path:'productCreate',component: ProductCreateComponent}
     ],

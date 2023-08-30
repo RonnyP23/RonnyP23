@@ -20,6 +20,7 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
 import { HttpClientModule} from '@angular/common/http';
 import { CreateAccountComponent } from './layout/create-account/create-account.component'
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
 
 
 
@@ -49,7 +50,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatCardModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule
 
     
   ],
