@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CreateAccountService } from './create-account.service';
+import * as bcrypt from 'bcryptjs'
 
 @Component({
   selector: 'app-create-account',
@@ -34,6 +35,9 @@ export class CreateAccountComponent implements OnInit {
     const telefone = this.createUser.get('telefone')?.value;
     const cpf = this.createUser.get('cpf')?.value;
     const password = this.createUser.get('password')?.value;
+
+    // const saltRounds = 10;
+    // const hashedPassword = bcrypt.hashSync(password, saltRounds)
 
     const createData = {
       name: name,

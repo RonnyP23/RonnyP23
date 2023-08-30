@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccountService } from 'src/app/account/shared/account.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import * as bcrypt from 'bcryptjs'
 
 @Component({
   selector: 'app-login',
@@ -31,6 +32,11 @@ export class LoginComponent implements OnInit {
       const email = this.login.get('email')?.value;
       const password = this.login.get('password')?.value;
 
+      // const saltRounds = 10;
+      // const hashedPassword = bcrypt.hashSync(password,saltRounds)
+
+
+
       const loginData = {
         username: email,
         password: password
@@ -40,7 +46,7 @@ export class LoginComponent implements OnInit {
       console.log(`login efetuado ${result}`);
       this.router.navigate(['']);
     } catch (error) {
-      this.router.navigate(['createAccount']);
+      this.router.navigate(['appHome']);
       console.log(error)
     }
     

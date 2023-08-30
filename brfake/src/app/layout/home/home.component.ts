@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
+
+  showHeader: boolean = true;
 
   ngOnInit(): void {
+    debugger
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.showHeader = event.url !== '/login'; // Substitua '/pagina-especifica' pela URL da página onde você não deseja exibir o cabeçalho
+      }
+    });
   }
 
 }
