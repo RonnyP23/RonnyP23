@@ -11,7 +11,7 @@ import { CreateAccountComponent } from './layout/create-account/create-account.c
 const routes: Routes = [
   {path: '', component:HomeComponent,
     children:[
-      {path:'',component: ProductCreateComponent}
+      {path:'productCreate',component: ProductCreateComponent}
     ],
     canActivate: [AuthGuard]
   },
@@ -21,7 +21,7 @@ const routes: Routes = [
     {path: 'login', component: LoginComponent}
   ]
   },
-
+  {path: 'appHome', component: HomeComponent},
   {path: 'createAccount', component: CreateAccountComponent}
     
   
