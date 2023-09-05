@@ -23,91 +23,49 @@
             <button mat-menu-item>Rotinas</button>
         </mat-menu>
     </span>
-    <span class="menudrop">
-        <button mat-button [matMenuTriggerFor]="menu">Controle Interno</button>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item>Resumo cliente</button>
-            <button mat-menu-item>Anexar certificado</button>
-            <button mat-menu-item>Tipo de conbrança</button>
-            <button mat-menu-item>Tabela de preço</button>
-            <button mat-menu-item>Teste ws soluti</button>
-            <button mat-menu-item>renovação clientes</button>
-            <button mat-menu-item>Fechamento de comissão parceiro</button>
-            <button mat-menu-item>Visita contadores</button>
-            <button mat-menu-item>Fechamento de pedidos por parceiros</button>
-            <button mat-menu-item>Envio mensagem</button>
-            <button mat-menu-item>Termo de titularidade</button>
-            <button mat-menu-item>Cadastro de metas</button>
-            <button mat-menu-item>Controle de qualidade</button>
-            <button mat-menu-item>Controle de visitas</button>
-            <button mat-menu-item>Pos vendas</button>
-            <button mat-menu-item>Bem na mão</button>
-            <button mat-menu-item>Estoque</button>
-        </mat-menu>
-        <a>
-            <i class="material-icons">
+    <div class="user">
+        <div class="">
+            <img class="img-icon-user" src="../../../../assets/img/userIcon.png" alt="">
+        </div>
+        <div class="user-nome" id="userID">
+            <div >{{username}}</div>
 
-            </i>
-        </a>
-    </span>
-    <span class="menudrop">
-        <button mat-button [matMenuTriggerFor]="menu">R.H</button>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item></button>
-            <button mat-menu-item></button>
-        </mat-menu>
-        <a>
-            <i class="material-icons">
+            <div class="user-icon">
+                <button mat-button [matMenuTriggerFor]="userConfig">
+                    <span class="material-icons">
+                        expand_more
+                    </span>
+                </button>
+                <mat-menu #userConfig="matMenu">
+                    <button mat-menu-item>
+                        <div class="settings-icon">
+                            <span class="material-icons ">
+                                settings
+                            </span>
+                            <span>Configuração</span>
+                        </div>
+                    </button>
 
-            </i>
-        </a>
-    </span>
-    <span class="menudrop">
-        <button mat-button [matMenuTriggerFor]="menu">Movimentação</button>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item></button>
-            <button mat-menu-item></button>
-        </mat-menu>
-        <a>
-            <i class="material-icons">
+                    <button mat-menu-item>
+                        <div class="settings-icon">
+                            <span class="material-icons">
+                                flag
+                            </span>
+                            <span>Suporte</span>
+                        </div>
+                    </button>
 
-            </i>
-        </a>
-    </span>
-    <span class="menudrop">
-        <button mat-button [matMenuTriggerFor]="menu">Financeiro</button>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item></button>
-            <button mat-menu-item></button>
-        </mat-menu>
-        <a>
-            <i class="material-icons">
-
-            </i>
-        </a>
-    </span>
-    <span class="menudrop">
-        <button mat-button [matMenuTriggerFor]="menu">Relatórios</button>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item></button>
-            <button mat-menu-item></button>
-        </mat-menu>
-        <a>
-            <i class="material-icons">
-
-            </i>
-        </a>
-    </span>
-    <span class="menudrop">
-        <button mat-button [matMenuTriggerFor]="menu">Multinivel</button>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item></button>
-            <button mat-menu-item></button>
-        </mat-menu>
-        <a>
-            <i class="material-icons">
-
-            </i>
-        </a>
-    </span>
+                    <button mat-menu-item>
+                        <div class="settings-icon">
+                            <span class="material-icons">
+                                close
+                            </span>
+                            <span>Sair</span>
+                        </div>
+                    </button>
+                    
+                </mat-menu>
+            </div>
+        </div>
+    </div>
 </mat-toolbar>

@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
 }
 .header a {
     display: flex;
@@ -21,3 +21,27 @@
     width: 150px;
     height: 150px;
 }
+.user {
+    display: flex;
+    margin: 5px;
+}
+
+.user-nome {
+    display: flex;
+    align-items: center;
+}
+.img-icon-user {
+    margin: 5px;
+    width: 45px;
+    height: 50px;
+}
+
+.settings-icon {
+    display: flex;
+    align-items: center;
+}
+
+.settings-icon .material-icons {
+    margin: 5px;
+}
+

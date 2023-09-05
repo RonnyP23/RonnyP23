@@ -28,6 +28,7 @@ export class AccountService {
       if (result && result.access_token) {
         // Armazena o token no localStorage
         window.localStorage.setItem('token', result.access_token);
+        window.localStorage.setItem('usuario', user.username);
         return true;
       }
       
