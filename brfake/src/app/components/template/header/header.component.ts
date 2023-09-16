@@ -26,19 +26,31 @@ export class HeaderComponent implements OnInit {
   modalSuportShow = false;
 
   showModalConfig() {
-    this.modalConfigShow = true;
-  }
-  
-  closeModalConfig() {
-    this.modalConfigShow = false;
-  }
-  
-  showModalSuporte() {
     debugger
-    this.modalSuportShow = true;
+   const modalConfig = document.getElementById('modalConfig');
+   if(modalConfig != null) {
+    modalConfig.style.display = 'block';
+   }
   }
 
-  closeModalSuporte() {
-    this.modalSuportShow = false
+  closeModalConfig() {
+   const modalConfig = document.getElementById('modalConfig');
+   if(modalConfig != null) {
+    modalConfig.style.display = 'none';
+   }
   }
+
+  showModalSuporte() {
+    const modalSuport = document.getElementById('modalSuport');
+    if(modalSuport != null) [
+      modalSuport.style.display = 'block'
+    ]
+  }
+  closeModalSuporte() {
+    const modalSuport = document.getElementById('modalSuport');
+    if(modalSuport != null) {
+      modalSuport.style.display = 'none'
+    }
+  }
+
 }

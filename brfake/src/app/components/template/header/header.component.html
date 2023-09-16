@@ -70,32 +70,40 @@
     </div>
 </mat-toolbar>
 
-<div *ngIf="modalConfigShow" class="overlay">
-    <div class="modal-container">
-      <div #modalConfig></div>
-
+<div class="modal" id="modalConfig" tabindex="-1">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Configurações do sistema</h5>
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModalConfig()">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
         <div class="modal-body">
-          <p>Aqui vai o corpo do meu modal.</p>
+          <p>Modal body text goes here.</p>
         </div>
-      <button (click)="closeModalConfig()">Fechar</button>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
     </div>
 </div>
 
-<div *ngIf="modalSuportShow && modalConfigShow" class="overlay">
-    <div class="modal-container">
-      <div #modalSuport></div>
-
+<div class="modal" id="modalSuport" tabindex="-1">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Abri Chamado para o suporte</h5>
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModalSuporte()">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
         <div class="modal-body">
-          <p>Aqui vai o corpo do meu modal.</p>
+          <p>Modal body text goes here.</p>
         </div>
-      <button (click)="closeModalSuporte()">Fechar</button>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
     </div>
 </div>
