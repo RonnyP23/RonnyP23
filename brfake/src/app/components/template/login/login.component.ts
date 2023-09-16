@@ -50,6 +50,9 @@ export class LoginComponent implements OnInit {
       console.log(`login efetuado ${result}`);
       if(result === false){
         this.invalidPassword = true;
+        setTimeout(() => {
+          this.invalidPassword = false;
+      }, 5000);
       }else{
         this.router.navigate(['productCreate']);
       }
