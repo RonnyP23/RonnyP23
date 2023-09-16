@@ -37,8 +37,8 @@
                     </span>
                 </button>
                 <mat-menu #userConfig="matMenu">
-                    <button mat-menu-item>
-                        <div class="settings-icon">
+                    <button mat-menu-item (click)="showModalConfig()">
+                        <div class="settings-icon" >
                             <span class="material-icons ">
                                 settings
                             </span>
@@ -46,7 +46,7 @@
                         </div>
                     </button>
 
-                    <button mat-menu-item>
+                    <button mat-menu-item (click)="showModalSuporte()">
                         <div class="settings-icon">
                             <span class="material-icons">
                                 flag
@@ -60,7 +60,7 @@
                             <span class="material-icons">
                                 close
                             </span>
-                            <span>Sair</span>
+                            <span routerLink="">Sair</span>
                         </div>
                     </button>
                     
@@ -69,3 +69,33 @@
         </div>
     </div>
 </mat-toolbar>
+
+<div *ngIf="modalConfigShow" class="overlay">
+    <div class="modal-container">
+      <div #modalConfig></div>
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Configurações do sistema</h5>
+        </div>
+        <div class="modal-body">
+          <p>Aqui vai o corpo do meu modal.</p>
+        </div>
+      <button (click)="closeModalConfig()">Fechar</button>
+    </div>
+</div>
+
+<div *ngIf="modalSuportShow && modalConfigShow" class="overlay">
+    <div class="modal-container">
+      <div #modalSuport></div>
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Abri Chamado para o suporte</h5>
+        </div>
+        <div class="modal-body">
+          <p>Aqui vai o corpo do meu modal.</p>
+        </div>
+      <button (click)="closeModalSuporte()">Fechar</button>
+    </div>
+</div>

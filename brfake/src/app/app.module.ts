@@ -21,7 +21,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { CreateAccountComponent } from './layout/create-account/create-account.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -36,7 +36,7 @@ import { MatIcon, MatIconModule } from '@angular/material/icon';
     HomeComponent,
     ProductCreateComponent,
     AuthenticationComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +51,8 @@ import { MatIcon, MatIconModule } from '@angular/material/icon';
     MatCardModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
 
     
   ],

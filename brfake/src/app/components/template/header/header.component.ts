@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -15,6 +15,30 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // @ViewChild('modalConfig')
+  // modalConfig!: ElementRef;
 
+  // @ViewChild('modalSuport')
+  // modalSuport!: ElementRef;
 
+  modalConfigShow = false;
+
+  modalSuportShow = false;
+
+  showModalConfig() {
+    this.modalConfigShow = true;
+  }
+  
+  closeModalConfig() {
+    this.modalConfigShow = false;
+  }
+  
+  showModalSuporte() {
+    debugger
+    this.modalSuportShow = true;
+  }
+
+  closeModalSuporte() {
+    this.modalSuportShow = false
+  }
 }
