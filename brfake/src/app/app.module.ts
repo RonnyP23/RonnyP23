@@ -22,6 +22,7 @@ import { CreateAccountComponent } from './layout/create-account/create-account.c
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
@@ -53,8 +54,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     ReactiveFormsModule,
     MatIconModule,
     MatDialogModule,
-
-    
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

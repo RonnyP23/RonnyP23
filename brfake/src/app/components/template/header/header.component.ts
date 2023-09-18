@@ -21,10 +21,6 @@ export class HeaderComponent implements OnInit {
   // @ViewChild('modalSuport')
   // modalSuport!: ElementRef;
 
-  modalConfigShow = false;
-
-  modalSuportShow = false;
-
   showModalConfig() {
     debugger
    const modalConfig = document.getElementById('modalConfig');

@@ -9,8 +9,18 @@ import * as bcrypt from 'bcryptjs'
   styleUrls: ['./create-account.component.css']
 })
 export class CreateAccountComponent implements OnInit {
+   name: string = '';
+   email: string = '';
+   telefone: string = '';
+   cpf: string = '';
+   password: string = '';
 
-  createUser: FormGroup
+
+
+  createUser: FormGroup;
+  showCreate = false;
+  validCadastro = false;
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -28,8 +38,11 @@ export class CreateAccountComponent implements OnInit {
      
   }
 
+  if(name: string ) {
+
+  }
   async onSubmit() {
-    debugger
+  
     const name = this.createUser.get('name')?.value;
     const email = this.createUser.get('email')?.value;
     const telefone = this.createUser.get('telefone')?.value;
@@ -46,9 +59,14 @@ export class CreateAccountComponent implements OnInit {
       cpf: cpf,
       password: password
     }
-    console.log(createData)
+    
     try {
       const result = await this.createAccountService.createAccount(createData)
+      this.validCadastro = true
+      setTimeout(() => {
+        window.location.href = ''
+        this.validCadastro = false
+    }, 5000);
     } catch (error) {
       console.log(error)
     }
