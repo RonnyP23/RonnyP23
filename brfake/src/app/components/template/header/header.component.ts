@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
   // modalSuport!: ElementRef;
 
   showModalConfig() {
-    debugger
    const modalConfig = document.getElementById('modalConfig');
    if(modalConfig != null) {
     modalConfig.style.display = 'block';

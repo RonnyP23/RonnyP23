@@ -20,6 +20,7 @@ export class CreateAccountComponent implements OnInit {
   createUser: FormGroup;
   showCreate = false;
   validCadastro = false;
+  invalidCadastro = false;
 
 
   constructor(
@@ -43,11 +44,11 @@ export class CreateAccountComponent implements OnInit {
   }
   async onSubmit() {
   
-    const name = this.createUser.get('name')?.value;
-    const email = this.createUser.get('email')?.value;
+    const name = this.createUser.get('name')?.value.trim();
+    const email = this.createUser.get('email')?.value.trim();
     const telefone = this.createUser.get('telefone')?.value;
     const cpf = this.createUser.get('cpf')?.value;
-    const password = this.createUser.get('password')?.value;
+    const password = this.createUser.get('password')?.value.trim();
 
     // const saltRounds = 10;
     // const hashedPassword = bcrypt.hashSync(password, saltRounds)
@@ -62,13 +63,17 @@ export class CreateAccountComponent implements OnInit {
     
     try {
       const result = await this.createAccountService.createAccount(createData)
+      console.log(result)
       this.validCadastro = true
       setTimeout(() => {
         window.location.href = ''
         this.validCadastro = false
     }, 5000);
     } catch (error) {
-      console.log(error)
+      this.validCadastro = true
+      setTimeout(() => {
+        this.invalidCadastro = false
+    }, 5000);
     }
   }
 }

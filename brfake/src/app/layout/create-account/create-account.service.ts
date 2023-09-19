@@ -17,9 +17,9 @@ export class CreateAccountService {
       };
 
       const result = await this.http.post<any>(`${environment.api}/user-account`, createData, httpOptions).subscribe();
-      console.log(result);
+      
     } catch (error) {
-      // Handle the error here
+      
     }
   }
 

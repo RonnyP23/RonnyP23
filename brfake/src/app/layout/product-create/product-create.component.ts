@@ -24,7 +24,6 @@ export class ProductCreateComponent implements OnInit {
   }
 
   async onSubmit() {
-    debugger
     const name = this.createUser.get('name')?.value;
     const email = this.createUser.get('email')?.value;
     const telefone = this.createUser.get('telefone')?.value;

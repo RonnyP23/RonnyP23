@@ -24,7 +24,6 @@ export class AccountService {
       };
       
       const result = await this.http.post<any>(`${environment.api}/auth/login`, user, httpOptions).toPromise();
-      debugger
       if (result && result.access_token) {
         // Armazena o token no localStorage
         window.localStorage.setItem('token', result.access_token);
