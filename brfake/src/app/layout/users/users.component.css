@@ -5,12 +5,21 @@
     background-size:cover; 
     background-repeat: no-repeat;
     background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
-.table-users {
-    width: 7vw;
+.user-table {
+display: flex;
+justify-content: center;
+align-items: center;
 }
+
+
+.mat-elevation-z8 {
+    width: 90% !important;
+    margin-top: 10vh;
+  }
+  
+  /* Defina a altura das células (opcional, se necessário) */
+  .mat-cell {
+    height: 40px; /* Defina a altura desejada para todas as células */
+  }

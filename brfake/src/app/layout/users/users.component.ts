@@ -10,7 +10,7 @@ import { Users } from 'src/app/@types/interfaces/IUsers';
 })
 export class UsersComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'email', 'telefone', 'cpf'];
+  displayedColumns: string[] = ['name', 'email', 'telefone', 'cpf', 'acoes'];
 
   usuario: Users[] = [
     {
@@ -30,7 +30,7 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     
     this.getAll();
-    
+
   }
 
   async getAll(): Promise<any> {
@@ -43,6 +43,11 @@ export class UsersComponent implements OnInit {
     } catch (error) {
       
     }
+  }
+
+  async clearElement(param: any) {
+    debugger
+    const result = await this.userService.clearUserById(param.id)
   }
 
 
