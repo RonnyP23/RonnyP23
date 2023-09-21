@@ -24,20 +24,20 @@
             <div>
                 
             </div>
-            <form [formGroup]="createUser" (ngSubmit)="onSubmit()">
+            <form [formGroup]="createUser">
                 <div class="container" style="display: flex;flex-direction: column;">
                     <div style="display: flex; justify-content: space-between; flex-direction: row;">
                         <div style=" margin: 20px;">
                             <mat-form-field >
                                 <input  type="text" matInput placeholder="Nome"
-                                formControlName="name" [(ngModel)]="name" >
+                                formControlName="name">
                                 
                             </mat-form-field>
                         </div>
                         <div style=" margin: 20px;">
                             <mat-form-field >
                                 <input  type="text" matInput placeholder="Email"
-                                formControlName="email" [(ngModel)]="email">
+                                formControlName="email">
                                 
                             </mat-form-field>
                         </div>
@@ -47,14 +47,14 @@
                         <div style=" margin: 20px;">
                             <mat-form-field >
                                 <input  type="text" matInput placeholder="Telefone"
-                                formControlName="telefone" [(ngModel)]="telefone">
+                                formControlName="telefone">
                                 
                             </mat-form-field>
                         </div>
                         <div style=" margin: 20px;">
                             <mat-form-field >
                                 <input  type="text" matInput placeholder="Cpf"
-                                formControlName="cpf" [(ngModel)]="cpf">
+                                formControlName="cpf">
                                 
                             </mat-form-field>
                         </div>
@@ -64,13 +64,12 @@
                     <div style=" margin: 20px;">
                         <mat-form-field>
                             <input  type="password" matInput placeholder="Password" 
-                            formControlName="password" [(ngModel)]="password">
+                            formControlName="password">
                         </mat-form-field>
                     </div>
      
                     <div class="button" 
-                         style=" margin: 20px;" 
-                         *ngIf="name.length > 0 && email.length > 0 && telefone.length > 0 && cpf.length > 0 && password.length > 0">
+                         style=" margin: 20px;">
                         <button type="submit" mat-button (click)="onSubmit()" >Cadastrar-se</button>
                     </div>
                 </div>

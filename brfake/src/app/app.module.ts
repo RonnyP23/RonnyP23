@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/template/header/header.component';
-import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonToggleModule} from '@angular/material/button-toggle';
 import { MatButtonModule} from '@angular/material/button';
 import { MatSelectModule} from '@angular/material/select';
@@ -21,8 +21,10 @@ import { HttpClientModule} from '@angular/common/http';
 import { CreateAccountComponent } from './layout/create-account/create-account.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { UsersComponent } from './layout/users/users.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -38,6 +40,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     ProductCreateComponent,
     AuthenticationComponent,
     CreateAccountComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     ReactiveFormsModule,
     MatIconModule,
     MatDialogModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

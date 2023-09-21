@@ -15,12 +15,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // @ViewChild('modalConfig')
-  // modalConfig!: ElementRef;
-
-  // @ViewChild('modalSuport')
-  // modalSuport!: ElementRef;
-
   showModalConfig() {
    const modalConfig = document.getElementById('modalConfig');
    if(modalConfig != null) {

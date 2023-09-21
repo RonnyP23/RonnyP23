@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.showHeader = event.url !== '/login'; // Substitua '/pagina-especifica' pela URL da página onde você não deseja exibir o cabeçalho
+        this.showHeader = event.url !== '/login';
       }
     });
   }

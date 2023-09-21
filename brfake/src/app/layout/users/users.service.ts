@@ -1,0 +1,19 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment'
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UsersService {
+
+  constructor(private http: HttpClient) { }
+
+  async getAllUsers() {
+
+    const result = await this.http.get<any>(`${environment.api}/user-account`).toPromise();
+    return result
+    
+  }
+
+}
