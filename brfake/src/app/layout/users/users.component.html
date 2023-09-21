@@ -1,5 +1,7 @@
 <app-header></app-header>
-    <div class="container">
+    <div class="content">
+      <div class="">
+
         <table mat-table [dataSource]="usuario" class="mat-elevation-z8">
             {{usuario}}
 
@@ -33,7 +35,7 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
-          
-          
+
+      </div>
     </div>
 <app-footer></app-footer>

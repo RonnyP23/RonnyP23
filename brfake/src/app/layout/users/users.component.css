@@ -1,0 +1,16 @@
+.content {
+    width: 100%;
+    height: 89%;
+    background-image: url('../../../assets/img/imagemFundo1.png');
+    background-size:cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.table-users {
+    width: 7vw;
+}

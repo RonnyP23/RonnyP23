@@ -5,12 +5,11 @@
     width: 100%;
     height: 100%;
     background-image: url('../../../../assets/img/imagemFundo1.png');
-    background-size:cover; /* Isso fará com que a imagem de fundo cubra todo o elemento body */
-    background-repeat: no-repeat; /* Isso impede que a imagem de fundo seja repetida */
+    background-size:cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
-    
-    
 }
+
 .logo{
     width: 300px;
 }
