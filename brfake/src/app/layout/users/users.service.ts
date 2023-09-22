@@ -17,7 +17,6 @@ export class UsersService {
   }
 
   async clearUserById (param: any): Promise<any> {
-    debugger
     let id = param
     try {
       const url = `${environment.api}/user-account/${id}`;

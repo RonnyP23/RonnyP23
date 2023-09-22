@@ -8,36 +8,44 @@ import { environment } from 'src/environments/environment';
 })
 export class AccountService {
 
+  private accessToken: string| null = null; 
   
   constructor(
     private http: HttpClient,
     ) { }
 
   async login(user: any) {
-
-
     try {
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json'
-        })
-      };
       
-      const result = await this.http.post<any>(`${environment.api}/auth/login`, user, httpOptions).toPromise();
-      if (result && result.access_token) {
-        // Armazena o token no localStorage
-        window.localStorage.setItem('token', result.access_token);
-        window.localStorage.setItem('usuario', user.username);
-        return true;
-      }
+      const result = await this.http.post<any>(`${environment.api}/auth/login`, user).toPromise();
+      this.accessToken = result.access_token;
+      window.localStorage.setItem('usuario', user.username);
+      window.localStorage.setItem( 'token', result.access_token);
+
+      // if (this.accessToken) {
+      //   window.localStorage.setItem('token', result.access_token);
+      //   return true;
+      // }
       
-      return false;
+      return true;
     } catch (error) {
-      
       return false;
     }
   }
+
+  isAuthorized(): boolean {
+    return !!this.accessToken;
+  }
+
+  setAccessToken(token: string | null): void {
+    this.accessToken = token;
+  }
+
+  getAccessToken(): string | null {
+    return this.accessToken;
+  }
+
+  logout(): void {
+    window.localStorage.clear()
+  }
 }
-
-
-

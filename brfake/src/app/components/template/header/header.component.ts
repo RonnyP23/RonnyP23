@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AccountService } from 'src/app/account/shared/account.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   username = localStorage.getItem('usuario');
   
-  constructor() { }
+  constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
   }
@@ -40,6 +41,11 @@ export class HeaderComponent implements OnInit {
     if(modalSuport != null) {
       modalSuport.style.display = 'none'
     }
+  }
+
+  logout() {
+    this.accountService.logout();
+    window.location.href = '';
   }
 
 }

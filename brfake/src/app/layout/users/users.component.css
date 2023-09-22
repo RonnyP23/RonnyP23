@@ -8,7 +8,6 @@
 }
 
 .user-table {
-position: absolute;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -24,6 +23,11 @@ align-items: center;
   .mat-cell {
     height: 40px; /* Defina a altura desejada para todas as células */
   }
+
+  .icon-reply {
+    margin:2vw 0 0 2vw;
+    cursor: pointer;
+}
 
 
   

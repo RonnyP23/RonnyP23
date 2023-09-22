@@ -12,7 +12,7 @@ export class UsersComponent implements OnInit {
 
   displayedColumns: string[] = ['name', 'email', 'telefone', 'cpf', 'acoes'];
 
-  showPopupSucessDelete = true;
+  showPopupSucessDelete = false;
   showPopupErrorDelete = false;
   usuario: Users[] = [
     {
@@ -48,7 +48,6 @@ export class UsersComponent implements OnInit {
   }
 
   async clearElement(param: any) {
-    debugger
     const result = await this.userService.clearUserById(param.id);
 
     if(result.data) {

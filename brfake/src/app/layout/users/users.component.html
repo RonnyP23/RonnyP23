@@ -1,6 +1,13 @@
 <app-header></app-header>
     <div class="content">
       <div class="col-md-12 content-alert">
+
+        <div class="icon-reply"
+             matTooltip="Voltar uma página">
+            <span class="material-icons" routerLink="/productCreate">
+                reply
+            </span>
+        </div>
       
         <div class="alert alert-success" role="alert" *ngIf="showPopupSucessDelete">
             Sucesso ao excluir usuário

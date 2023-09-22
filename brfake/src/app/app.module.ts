@@ -16,7 +16,6 @@ import { MatInputModule} from '@angular/material/input';
 import { MatCardModule} from '@angular/material/card';
 import { HomeComponent } from './layout/home/home.component';
 import { ProductCreateComponent } from './layout/product-create/product-create.component';
-import { AuthenticationComponent } from './layout/authentication/authentication.component';
 import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { CreateAccountComponent } from './layout/create-account/create-account.component'
 import { ReactiveFormsModule } from '@angular/forms';
@@ -39,7 +38,6 @@ import { CustomHeaderInterceptor } from '../app/core/interceptors/custom-header.
     LoginComponent,
     HomeComponent,
     ProductCreateComponent,
-    AuthenticationComponent,
     CreateAccountComponent,
     UsersComponent,
   ],

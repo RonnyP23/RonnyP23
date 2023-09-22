@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './layout/home/home.component';
 import { ProductCreateComponent } from './layout/product-create/product-create.component';
-import { AuthenticationComponent } from './layout/authentication/authentication.component';
 import { AuthGuard } from './account/shared/auth.guard';
 import { CreateAccountComponent } from './layout/create-account/create-account.component';
 import { UsersComponent } from './layout/users/users.component';
