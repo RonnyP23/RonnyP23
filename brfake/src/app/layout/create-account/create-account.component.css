@@ -15,16 +15,6 @@
     flex-direction: column;
 }
 
-.content-alert {
-    display: flex;
-    justify-content: space-between;
-   
-}
-
-.alert-success {
-    margin: 2vw 2vw 0 0;
-}
-
 .icon-reply {
     margin:2vw 0 0 2vw;
     cursor: pointer;

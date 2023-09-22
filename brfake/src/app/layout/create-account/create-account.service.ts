@@ -10,13 +10,8 @@ export class CreateAccountService {
   constructor(private http: HttpClient) { }
   async createAccount(createData: any) {
     try {
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json'
-        })
-      };
-
-      const result = await this.http.post<any>(`${environment.api}/user-account`, createData, httpOptions).subscribe();
+    
+      const result = await this.http.post<any>(`${environment.api}/user-account`, createData).subscribe();
       
     } catch (error) {
       

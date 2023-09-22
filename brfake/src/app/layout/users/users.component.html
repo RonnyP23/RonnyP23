@@ -1,5 +1,14 @@
 <app-header></app-header>
     <div class="content">
+      <div class="col-md-12 content-alert">
+      
+        <div class="alert alert-success" role="alert" *ngIf="showPopupSucessDelete">
+            Sucesso ao excluir usuário
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="showPopupErrorDelete">
+            Erro ao excluir usuário
+        </div>
+    </div>
       <div class="user-table">
 
         <table mat-table [dataSource]="usuario" class="mat-elevation-z8">

@@ -17,7 +17,7 @@ import { MatCardModule} from '@angular/material/card';
 import { HomeComponent } from './layout/home/home.component';
 import { ProductCreateComponent } from './layout/product-create/product-create.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
-import { HttpClientModule} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { CreateAccountComponent } from './layout/create-account/create-account.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
@@ -25,6 +25,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { UsersComponent } from './layout/users/users.component';
 import { MatTableModule } from '@angular/material/table';
+import { CustomHeaderInterceptor } from '../app/core/interceptors/custom-header.interceptor'
 
 
 
@@ -60,7 +61,13 @@ import { MatTableModule } from '@angular/material/table';
     MatTooltipModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CustomHeaderInterceptor, 
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

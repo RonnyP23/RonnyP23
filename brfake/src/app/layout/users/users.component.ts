@@ -12,6 +12,8 @@ export class UsersComponent implements OnInit {
 
   displayedColumns: string[] = ['name', 'email', 'telefone', 'cpf', 'acoes'];
 
+  showPopupSucessDelete = true;
+  showPopupErrorDelete = false;
   usuario: Users[] = [
     {
       name: '',
@@ -47,7 +49,26 @@ export class UsersComponent implements OnInit {
 
   async clearElement(param: any) {
     debugger
-    const result = await this.userService.clearUserById(param.id)
+    const result = await this.userService.clearUserById(param.id);
+
+    if(result.data) {
+
+      this.showPopupSucessDelete = true;
+      this.getAll();
+      setTimeout(() => {
+        this.showPopupSucessDelete = false;
+       }, 5000)
+    } else {
+      this.showPopupErrorDelete = true;
+
+      setTimeout(() => {
+        this.showPopupSucessDelete = false;
+       }, 5000)
+    }
+    
+      
+    
+    console.log(result)
   }
 
 
