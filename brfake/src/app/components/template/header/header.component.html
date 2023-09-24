@@ -1,28 +1,21 @@
-<mat-toolbar class="header mat-elevation-z4" style="height: 83px">
-    <span class="menudrop">
+<mat-toolbar class="header mat-elevation-z4">
+    <div class="">
         <a>
             <img  class="logo"src="../../../../assets/img/pipa.svg" alt="logo">
         </a>
-    </span>
-    <span class="menudrop">
-        <button mat-button [matMenuTriggerFor]="menu">Cadastros</button>
+    </div>
+
+    <div class="menudrop">
+        <button mat-button [matMenuTriggerFor]="menu">
+          <span class="material-icons">
+            menu
+          </span>
+        </button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item>Clientes</button>
-            <button mat-menu-item>Baixar XML Clientes</button>
-            <button mat-menu-item>Cadastro Clientes Produto</button>
-            <button mat-menu-item>Sindicato</button>
             <button mat-menu-item routerLink="/users">Usuários</button>
-            <button mat-menu-item>Parceiros</button>
-            <button mat-menu-item>Produtos</button>
-            <button mat-menu-item>Representantes</button>
-            <button mat-menu-item>Cadastro nivel de acesso</button>
-            <button mat-menu-item>Consorcio</button>
-            <button mat-menu-item>Cadastro de agrupamento</button>
-            <button mat-menu-item>Cadastro usuário empresa</button>
-            <button mat-menu-item>Usuario conta corrente</button>
-            <button mat-menu-item>Rotinas</button>
         </mat-menu>
-    </span>
+    </div>
+    
     <div class="user">
         <div class="">
             <img class="img-icon-user" src="../../../../assets/img/userIcon.png" alt="">

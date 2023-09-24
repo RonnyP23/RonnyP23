@@ -1,5 +1,5 @@
-<app-header></app-header>
-    <div class="content">
+<div class="content container">
+    <app-header></app-header>
       <div class="col-md-12 content-alert">
 
         <div class="icon-reply"
@@ -54,6 +54,11 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
 
+          <div class="notFound col-md-6">
+            <h1>
+              <p>Não existem dados a serem apresentados na tabela</p>
+            </h1>
+          </div>
       </div>
-    </div>
-<app-footer></app-footer>
+    <app-footer></app-footer>
+</div>
