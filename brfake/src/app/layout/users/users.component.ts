@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from './users.service'
 import { Users } from 'src/app/@types/interfaces/IUsers';
 
@@ -23,11 +24,24 @@ export class UsersComponent implements OnInit {
       password: ''
     }
   ];
+
+  editUser: FormGroup;
   
 
   constructor(
     private http: HttpClient,
-    private userService: UsersService) { }
+    private userService: UsersService,
+    private formBuilder: FormBuilder) { 
+
+      this.editUser = this.formBuilder.group({
+        name: ['', Validators.required],
+        email: ['', Validators.required],
+        telefone:'',
+        cpf: '',
+        
+      });
+
+    }
 
   ngOnInit(): void {
     
@@ -69,6 +83,21 @@ export class UsersComponent implements OnInit {
     
     console.log(result)
   }
+
+  showModalEditUsers() {
+    const modalEditUsers = document.getElementById('modalEditUsers');
+    const container = document.getElementById('content');
+    if(modalEditUsers != null) {
+     modalEditUsers.style.display = 'block';
+    }
+   }
+
+   closeModalEditUsers() {
+    const modalEditUsers = document.getElementById('modalEditUsers');
+    if(modalEditUsers != null) {
+     modalEditUsers.style.display = 'none';
+    }
+   }
 
 
 

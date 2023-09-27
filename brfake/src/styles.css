@@ -29,3 +29,14 @@ v-middle {
     display: flex;
     justify-content: space-between;
 }
+
+.modal {
+    margin-top: 15em;
+}
+
+.modal-opened {
+    /* Aplica um filtro de desfoque ao fundo */
+    filter: blur(4px); /* Você pode ajustar o valor para controlar o nível de desfoque desejado */
+    transition: filter 0.3s ease; /* Adiciona uma transição suave para o efeito */
+  }
+  

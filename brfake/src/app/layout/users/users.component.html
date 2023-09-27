@@ -44,8 +44,17 @@
             <ng-container matColumnDef="acoes">
               <th mat-header-cell *matHeaderCellDef>Ações</th>
               <td mat-cell *matCellDef="let element">
-                <button mat-icon-button (click)="clearElement(element)">
+                <button mat-icon-button (click)="clearElement(element)"
+                        matTooltip="Deletar usuário"
+                        matTooltipPosition="above">
+                  
                   <mat-icon style="color: red;">delete</mat-icon>
+                </button>
+                <button mat-icon-button
+                        matTooltip="Editar usuário"
+                        matTooltipPosition="above"
+                        (click)="showModalEditUsers()">
+                  <mat-icon style="color: #5c5c5c;">edit</mat-icon>
                 </button>
               </td>
             </ng-container>
@@ -61,4 +70,65 @@
           </div>
       </div>
     <app-footer></app-footer>
+
+    <div class="modal" id="modalEditUsers" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Editar cadastro do usuário</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModalEditUsers()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex-center">
+              <div>
+                  
+              </div>
+              <form [formGroup]="editUser">
+                  <div class="container" style="display: flex;flex-direction: column;">
+                      <div style="display: flex; justify-content: space-between; flex-direction: row;">
+                          <div style=" margin: 20px;">
+                              <mat-form-field >
+                                  <input  type="text" matInput placeholder="Nome"
+                                  formControlName="name">
+                                  
+                              </mat-form-field>
+                          </div>
+                          <div style=" margin: 20px;">
+                              <mat-form-field >
+                                  <input  type="text" matInput placeholder="Email"
+                                  formControlName="email">
+                                  
+                              </mat-form-field>
+                          </div>
+                      </div>
+                      
+                      <div style="display: flex; justify-content: space-between; flex-direction: row;">
+                          <div style=" margin: 20px;">
+                              <mat-form-field >
+                                  <input  type="text" matInput placeholder="Telefone"
+                                  formControlName="telefone">
+                                  
+                              </mat-form-field>
+                          </div>
+                          <div style=" margin: 20px;">
+                              <mat-form-field >
+                                  <input  type="text" matInput placeholder="Cpf"
+                                  formControlName="cpf">
+                                  
+                              </mat-form-field>
+                          </div>
+                      </div>
+                  </div>
+                  
+              </form>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
