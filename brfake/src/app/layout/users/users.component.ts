@@ -13,8 +13,13 @@ export class UsersComponent implements OnInit {
 
   displayedColumns: string[] = ['name', 'email', 'telefone', 'cpf', 'acoes'];
 
+
   showPopupSucessDelete = false;
   showPopupErrorDelete = false;
+
+  showPopupSuccessEdit = false;
+  showPopupErrorEdit = false;
+
   usuario: Users[] = [
     {
       id: 0,
@@ -27,6 +32,7 @@ export class UsersComponent implements OnInit {
   ];
 
   editUser: FormGroup;
+  elemenIdEditUser: any = '';
   
 
   constructor(
@@ -79,55 +85,66 @@ export class UsersComponent implements OnInit {
         this.showPopupSucessDelete = false;
        }, 5000)
     }
-    
-      
-    
-    console.log(result)
   }
 
-  async updateAccount() {
-    debugger
+  async updateUserAccount() {
     let name = this.editUser.get('name')?.value;
     let email = this.editUser.get('email')?.value;
     let telefone = this.editUser.get('telefone')?.value;
     let cpf = this.editUser.get('cpf')?.value;
+    let password = this.editUser.get('password')?.value;
 
     const updateData = {
       name: name,
       email: email,
       telefone: telefone,
-      cpf: cpf
+      cpf: cpf,
+      password: password
     }
-     try {
-      const result = await this.userService.getAllUsers();
-      const userselecteUpdate =  result.find((usuario : Users) => usuario.id === result.id)
 
-      if(userselecteUpdate) {
-        const result = await this.userService.updateAccount(updateData, userselecteUpdate)
+     try {
+      const result = await this.userService.updateAccount(this.elemenIdEditUser.id, updateData)
+      if(result.affected == 1) {
+        
+        this.getAll();
+        this.closeModalEditUserAccount();
+        this.showPopupSuccessEdit = true;
+
+        setTimeout(() => {
+          this.showPopupSuccessEdit = false;
+         }, 5000)
       }
      } catch (error) {
-      
+      this.showPopupErrorEdit = true;
+
+      setTimeout(() => {
+        this.showPopupErrorEdit = false;
+       }, 5000)
      }
-
-    
-
-    
   }
 
-  showModalEditUsers() {
+  showModalEditUsers(param: any) {
+    this.elemenIdEditUser = param;
+
     const modalEditUsers = document.getElementById('modalEditUsers');
     const container = document.getElementById('content');
+
     if(modalEditUsers != null) {
      modalEditUsers.style.display = 'block';
     }
    }
 
-   closeModalEditUsers() {
+   closeModalEditUserAccount() {
     const modalEditUsers = document.getElementById('modalEditUsers');
+    
     if(modalEditUsers != null) {
      modalEditUsers.style.display = 'none';
     }
    }
+
+  
+
+  
 
 
 
