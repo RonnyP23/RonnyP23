@@ -17,6 +17,7 @@ export class UsersComponent implements OnInit {
   showPopupErrorDelete = false;
   usuario: Users[] = [
     {
+      id: 0,
       name: '',
       email: '',
       telefone: '',
@@ -55,7 +56,7 @@ export class UsersComponent implements OnInit {
 
       const result = await this.userService.getAllUsers();
       this.usuario = result;
-      
+      return result
     } catch (error) {
       
     }
@@ -82,6 +83,35 @@ export class UsersComponent implements OnInit {
       
     
     console.log(result)
+  }
+
+  async updateAccount() {
+    debugger
+    let name = this.editUser.get('name')?.value;
+    let email = this.editUser.get('email')?.value;
+    let telefone = this.editUser.get('telefone')?.value;
+    let cpf = this.editUser.get('cpf')?.value;
+
+    const updateData = {
+      name: name,
+      email: email,
+      telefone: telefone,
+      cpf: cpf
+    }
+     try {
+      const result = await this.userService.getAllUsers();
+      const userselecteUpdate =  result.find((usuario : Users) => usuario.id === result.id)
+
+      if(userselecteUpdate) {
+        const result = await this.userService.updateAccount(updateData, userselecteUpdate)
+      }
+     } catch (error) {
+      
+     }
+
+    
+
+    
   }
 
   showModalEditUsers() {

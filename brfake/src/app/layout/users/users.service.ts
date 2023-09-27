@@ -28,4 +28,15 @@ export class UsersService {
     }
   }
 
+  async updateAccount (param: any, userselecteUpdate: any) {
+    debugger
+    try {
+      const url = `${environment.api}/user-account/${param.name,param.email,param.telefone,param.cpf}`;
+      const userAccount = userselecteUpdate;
+      const result = await this.http.put<any>(url, userAccount).toPromise();
+    } catch (error) {
+      
+    }
+  }
+
 }
