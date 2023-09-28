@@ -36,6 +36,7 @@ mat-card {
     background-size:cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    cursor: pointer;
     
 }
 

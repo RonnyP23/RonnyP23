@@ -41,10 +41,10 @@ export class UsersComponent implements OnInit {
     private formBuilder: FormBuilder) { 
 
       this.editUser = this.formBuilder.group({
-        name: ['', Validators.required],
-        email: ['', Validators.required],
-        telefone:'',
-        cpf: '',
+        name: ['', [Validators.required]],
+        email: ['', [Validators.required]],
+        telefone:['', [Validators.pattern('/^\(\d{2}\)\s\d{4}-\d{4}$/')]],
+        cpf: ['', [Validators.pattern('/^\d{3}\.\d{3}\.\d{3}-\d{2}$/')]],
         
       });
 
@@ -127,7 +127,8 @@ export class UsersComponent implements OnInit {
     this.elemenIdEditUser = param;
 
     const modalEditUsers = document.getElementById('modalEditUsers');
-    const container = document.getElementById('content');
+    let container = document.getElementById('content');
+   
 
     if(modalEditUsers != null) {
      modalEditUsers.style.display = 'block';
@@ -136,7 +137,7 @@ export class UsersComponent implements OnInit {
 
    closeModalEditUserAccount() {
     const modalEditUsers = document.getElementById('modalEditUsers');
-    
+
     if(modalEditUsers != null) {
      modalEditUsers.style.display = 'none';
     }

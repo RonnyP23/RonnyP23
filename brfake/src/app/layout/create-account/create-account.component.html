@@ -1,4 +1,4 @@
-<div class="content container-fluid">
+<div class="content container">
     <div class="col-md-12 content-alert">
         <div class="icon-reply"
              matTooltip="Voltar a tela de Login">
@@ -25,8 +25,8 @@
                 
             </div>
             <form [formGroup]="createUser">
-                <div class="container" style="display: flex;flex-direction: column;">
-                    <div style="display: flex; justify-content: space-between; flex-direction: row;">
+                <div class="content-form">
+                    <div class="content-form-div">
                         <div style=" margin: 20px;">
                             <mat-form-field >
                                 <input  type="text" matInput placeholder="Nome"
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     
-                    <div style="display: flex; justify-content: space-between; flex-direction: row;">
+                    <div class="content-form-div">
                         <div style=" margin: 20px;">
                             <mat-form-field >
                                 <input  type="text" matInput placeholder="Telefone"
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; flex-direction: row;" >
+                <div class="content-form-div">
                     <div style=" margin: 20px;">
                         <mat-form-field>
                             <input  type="password" matInput placeholder="Password" 

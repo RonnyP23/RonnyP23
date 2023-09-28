@@ -28,7 +28,7 @@ export class CreateAccountComponent implements OnInit {
     private createAccountService:CreateAccountService) { 
     
     this.createUser = this.formBuilder.group({
-      name: ['', Validators.required],
+      name: ['', Validators.required, ],
       email: ['', Validators.required],
       telefone:'',
       cpf: '',

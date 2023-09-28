@@ -21,9 +21,13 @@
     align-items: center;
 }
 .img-icon-user {
+    width: 9vw;
+    height: 7vh;
     margin: 5px;
-    width: 45px;
-    height: 50px;
+}
+
+.username-perfil {
+    font-size: 1em;
 }
 
 .settings-icon {

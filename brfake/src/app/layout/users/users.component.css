@@ -5,6 +5,8 @@
     background-size:cover; 
     background-repeat: no-repeat;
     background-attachment: fixed;
+    backdrop-filter: blur(8px); /* Adicione o efeito de desfoque desejado */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .user-table {
@@ -17,11 +19,12 @@
 .mat-elevation-z8 {
     width: 90% !important;
     margin-top: 10vh;
+
   }
   
-  /* Defina a altura das células (opcional, se necessário) */
   .mat-cell {
-    height: 40px; /* Defina a altura desejada para todas as células */
+    height: 40px;
+    cursor: pointer;
   }
 
   .icon-reply {
