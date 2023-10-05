@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   
   constructor(private accountService: AccountService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   showModalConfig() {

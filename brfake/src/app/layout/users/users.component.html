@@ -47,6 +47,37 @@
               <td mat-cell *matCellDef="let element"> {{element.cpf}} </td>
             </ng-container>
 
+            <ng-container matColumnDef="nivel">
+              <th mat-header-cell *matHeaderCellDef>Nível usuário</th>
+              <td mat-cell *matCellDef="let element">
+                <button mat-button [matMenuTriggerFor]="userNivel">
+                  <span class="material-icons">
+                    expand_more
+                  </span>
+                </button>
+                <mat-menu #userNivel="matMenu">
+                  <button mat-menu-item>
+                      <div class="settings-icon" >
+                          <span (click)="setUserLevel(1)">Gerente adm</span>
+                      </div>
+                  </button>
+  
+                  <button mat-menu-item>
+                      <div class="settings-icon">
+                          <span (click)="setUserLevel(1)">Subgerente</span>
+                      </div>
+                  </button>
+  
+                  <button mat-menu-item>
+                      <div class="settings-icon">
+                          <span (click)="setUserLevel(1)">Operador</span>
+                      </div>
+                  </button>
+                </mat-menu>
+              </td>
+              
+            </ng-container>
+
             <ng-container matColumnDef="acoes">
               <th mat-header-cell *matHeaderCellDef>Ações</th>
               <td mat-cell *matCellDef="let element">
@@ -124,6 +155,13 @@
                               <mat-form-field >
                                   <input  type="text" matInput placeholder="Cpf"
                                   formControlName="cpf">
+                                  
+                              </mat-form-field>
+                          </div>
+                          <div style=" margin: 20px;">
+                              <mat-form-field >
+                                  <input  type="" matInput placeholder="nivel Usuario"
+                                  ngModelGroup="userLevel">
                                   
                               </mat-form-field>
                           </div>

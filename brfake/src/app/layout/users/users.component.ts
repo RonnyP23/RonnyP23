@@ -11,7 +11,7 @@ import { Users } from 'src/app/@types/interfaces/IUsers';
 })
 export class UsersComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'email', 'telefone', 'cpf', 'acoes'];
+  displayedColumns: string[] = ['name', 'email', 'telefone', 'cpf', 'nivel', 'acoes'];
 
 
   showPopupSucessDelete = false;
@@ -20,6 +20,8 @@ export class UsersComponent implements OnInit {
   showPopupSuccessEdit = false;
   showPopupErrorEdit = false;
 
+  userLevel: number = 0;
+
   usuario: Users[] = [
     {
       id: 0,
@@ -27,7 +29,8 @@ export class UsersComponent implements OnInit {
       email: '',
       telefone: '',
       cpf: '',
-      password: ''
+      password: '',
+      userLevel: 0
     }
   ];
 
@@ -45,6 +48,7 @@ export class UsersComponent implements OnInit {
         email: ['', [Validators.required]],
         telefone:['', [Validators.pattern('/^\(\d{2}\)\s\d{4}-\d{4}$/')]],
         cpf: ['', [Validators.pattern('/^\d{3}\.\d{3}\.\d{3}-\d{2}$/')]],
+        userLevel: [''],
         
       });
 
@@ -87,19 +91,30 @@ export class UsersComponent implements OnInit {
     }
   }
 
+  setUserLevel (level: number) : void {
+    debugger
+    this.userLevel = level;
+    this.editUser.patchValue({userLevel: level});
+    
+  }
+
   async updateUserAccount() {
+    debugger
     let name = this.editUser.get('name')?.value;
     let email = this.editUser.get('email')?.value;
     let telefone = this.editUser.get('telefone')?.value;
     let cpf = this.editUser.get('cpf')?.value;
     let password = this.editUser.get('password')?.value;
+    let userLevel = this.editUser.get('userLevel')?.value;
 
     const updateData = {
       name: name,
       email: email,
       telefone: telefone,
       cpf: cpf,
-      password: password
+      password: password,
+      userLevel: userLevel,
+
     }
 
      try {
