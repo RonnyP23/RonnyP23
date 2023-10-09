@@ -15,6 +15,7 @@ export class AccountService {
     ) { }
 
   async login(user: any) {
+    debugger
     try {
       
       const result = await this.http.post<any>(`${environment.api}/auth/login`, user).toPromise();
@@ -35,14 +36,6 @@ export class AccountService {
 
   isAuthorized(): boolean {
     return !!this.accessToken;
-  }
-
-  setAccessToken(token: string | null): void {
-    this.accessToken = token;
-  }
-
-  getAccessToken(): string | null {
-    return this.accessToken;
   }
 
   logout(): void {

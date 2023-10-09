@@ -13,7 +13,7 @@ export class CustomHeaderInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    // Adicione um cabeçalho personalizado à solicitação
+    
     const customReq = req.clone({
       setHeaders: {
         'Custom-Header': 'application/json',
@@ -21,7 +21,7 @@ export class CustomHeaderInterceptor implements HttpInterceptor {
       },
     });
 
-    // Continue com a solicitação modificada
+    
     return next.handle(customReq);
   }
 }

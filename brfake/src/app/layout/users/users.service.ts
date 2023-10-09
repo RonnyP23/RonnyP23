@@ -10,10 +10,20 @@ export class UsersService {
   constructor(private http: HttpClient) { }
 
   async getAllUsers() {
-
     const result = await this.http.get<any>(`${environment.api}/user-account`).toPromise();
     return result
     
+  }
+
+  async getUserById(param: number): Promise<any> {
+    let id = param
+    try {
+      const url = `${environment.api}/user-account/${id}`;
+      const result = await this.http.get<any>(url).toPromise();
+
+    } catch (error) {
+      
+    }
   }
 
   async clearUserById (param: any): Promise<any> {

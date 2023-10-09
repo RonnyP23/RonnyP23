@@ -5,6 +5,6 @@ export interface Users {
     telefone: string,
     cpf: string,
     password: string,
-    userLevel: number
+    userLevel?: number
 
 }

@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 import * as bcrypt from 'bcryptjs'
+import { UsersService } from 'src/app/layout/users/users.service';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
 
   constructor( 
     private accountService: AccountService,
+    private usersService: UsersService,
     private formBuilder: FormBuilder,
     private router: Router
   ) {
@@ -58,6 +60,11 @@ export class LoginComponent implements OnInit {
       console.log(error)
     }
     
+  }
+
+  async verifyUserLevel () {
+    const id: any = ''
+    const user = await this.usersService.getUserById(id)
   }
 
 }
