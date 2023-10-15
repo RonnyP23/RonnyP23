@@ -92,14 +92,12 @@ export class UsersComponent implements OnInit {
   }
 
   setUserLevel (level: number) : void {
-    debugger
     this.userLevel = level;
     this.editUser.patchValue({userLevel: level});
     
   }
 
   async updateUserAccount() {
-    debugger
     let name = this.editUser.get('name')?.value;
     let email = this.editUser.get('email')?.value;
     let telefone = this.editUser.get('telefone')?.value;

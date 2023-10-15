@@ -10,14 +10,14 @@ export class HomeComponent implements OnInit {
 
   constructor(private router:Router) { }
 
-  showHeader: boolean = true;
+  // showHeader: boolean = true;
 
   ngOnInit(): void {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        this.showHeader = event.url !== '/login';
-      }
-    });
+    // this.router.events.subscribe(event => {
+    //   if (event instanceof NavigationEnd) {
+    //     this.showHeader = event.url !== '/login';
+    //   }
+    // });
   }
 
 }

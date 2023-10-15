@@ -9,14 +9,14 @@ import { UsersComponent } from './layout/users/users.component';
 
 
 const routes: Routes = [
-  {path: '', component: LoginComponent,
+  {path: '', component: HomeComponent,
   children:[
-    {path: '', redirectTo: 'login', pathMatch: 'full'},
-    {path: 'login', component: LoginComponent}
+    {path: '', redirectTo: 'appHome', pathMatch: 'full'},
+    {path: 'appHome', component: HomeComponent}
   ]
   },
+  {path: 'login', component: LoginComponent},
   {path: 'createAccount', component: CreateAccountComponent},
-
   {path: 'appHome', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'productCreate', component:ProductCreateComponent, canActivate: [AuthGuard]},
   {path: 'users', component: UsersComponent, canActivate: [AuthGuard]},

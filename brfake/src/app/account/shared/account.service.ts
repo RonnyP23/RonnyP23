@@ -15,7 +15,6 @@ export class AccountService {
     ) { }
 
   async login(user: any) {
-    debugger
     try {
       
       const result = await this.http.post<any>(`${environment.api}/auth/login`, user).toPromise();

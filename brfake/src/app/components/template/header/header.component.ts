@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+
 import { AccountService } from 'src/app/account/shared/account.service';
 
 @Component({
@@ -10,11 +12,35 @@ export class HeaderComponent implements OnInit {
   
 
   username = localStorage.getItem('usuario');
-  
-  constructor(private accountService: AccountService) { }
+  showUser: boolean = true;
+  local: string = '';
+  constructor(
+    private accountService: AccountService,
+    private router: Router) { }
 
-  ngOnInit() {
+   
+
+  ngOnInit(): void {
+    this.currentLocation();
   }
+
+  currentLocation () {
+    this.local = window.location.pathname;
+    // || this.local === "/createAccount"
+    if(this.local === "/appHome") {
+      this.showUser = false;
+    } else {
+      this.showUser = true;
+    }
+  }
+
+  goToLogin() {
+    window.location.href = '/login';
+  }
+  goToLogUp() {
+    window.location.href = '/createAccount';
+  }
+  
 
   showModalConfig() {
    const modalConfig = document.getElementById('modalConfig');
@@ -45,7 +71,7 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.accountService.logout();
-    window.location.href = '';
+    window.location.href = 'appHome';
   }
 
 }

@@ -40,4 +40,8 @@ export class ProductCreateComponent implements OnInit {
     console.log(createData)
   }
 
+  goToUsers() {
+    window.location.href = "/users"
+  }
+
 }

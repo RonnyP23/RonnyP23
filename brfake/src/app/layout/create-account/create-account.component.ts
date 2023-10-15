@@ -39,6 +39,10 @@ export class CreateAccountComponent implements OnInit {
      
   }
 
+  goBack() {
+    window.location.href = '/appHome';
+  }
+
 
   async onSubmit() {
    if(this.createUser.valid) {

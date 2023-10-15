@@ -67,4 +67,8 @@ export class LoginComponent implements OnInit {
     const user = await this.usersService.getUserById(id)
   }
 
+  back() {
+    window.location.href = 'appHome';
+  }
+
 }
